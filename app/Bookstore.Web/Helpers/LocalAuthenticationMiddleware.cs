@@ -3,23 +3,23 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using Bookstore.Domain.Customers;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Owin;
 
 
 namespace Bookstore.Web.Helpers
 {
-    public class LocalAuthenticationMiddleware : IMiddleware
+    public class LocalAuthenticationMiddleware : OwinMiddleware
     {
         private const string UserId = "FB6135C7-1464-4A72-B74E-4B63D343DD09";
 
         private readonly ICustomerService _customerService;
 
-        public LocalAuthenticationMiddleware(ICustomerService customerService)
+        public LocalAuthenticationMiddleware(OwinMiddleware next, ICustomerService customerService) : base(next)
         {
             _customerService = customerService;
         }
 
-        public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+        public override async Task Invoke(IOwinContext context)
         {
             if (context.Request.Path.Value.StartsWith("/Authentication/Login"))
             {
@@ -47,7 +47,7 @@ namespace Bookstore.Web.Helpers
             }
         }
 
-        private void CreateClaimsPrincipal(HttpContext context)
+        private void CreateClaimsPrincipal(IOwinContext context)
         {
             var identity = new ClaimsIdentity("Application");
 
@@ -57,7 +57,7 @@ namespace Bookstore.Web.Helpers
             identity.AddClaim(new Claim("family_name", "User"));
             identity.AddClaim(new Claim(ClaimTypes.Role, "Administrators"));
 
-            context.User = new ClaimsPrincipal(identity);
+            context.Request.User = new ClaimsPrincipal(identity);
         }
 
         private async Task SaveCustomerDetailsAsync()
