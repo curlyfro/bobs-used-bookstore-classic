@@ -1,63 +1,26 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration;
 
 namespace Bookstore.Web
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
-
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLogging(builder =>
-            {
-                builder.AddConfiguration(Configuration.GetSection("Logging"));
-                builder.AddConsole();
-                builder.AddDebug();
-            });
-
-            // Configure other services here
+            // Configure services here
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
+        public void Configure(IApplicationBuilder app, IHostEnvironment env)
         {
-            logger.LogInformation("Configuring application...");
+            LoggingSetup.ConfigureLogging();
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
+            ConfigurationSetup.ConfigureConfiguration();
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseRouting();
+            // Update these methods to work with ASP.NET Core
+            DependencyInjectionSetup.ConfigureDependencyInjection(app);
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
-
-            // TODO: Update or remove these method calls as needed
-            // ConfigurationSetup.ConfigureConfiguration();
-            // DependencyInjectionSetup.ConfigureDependencyInjection(app);
-            // AuthenticationConfig.ConfigureAuthentication(app);
-
-            logger.LogInformation("Application configured successfully.");
+            AuthenticationConfig.ConfigureAuthentication(app);
         }
     }
 }
