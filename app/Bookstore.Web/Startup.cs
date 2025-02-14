@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Bookstore.Web
 {
@@ -11,16 +12,41 @@ namespace Bookstore.Web
             // Configure services here
         }
 
-        public void Configure(IApplicationBuilder app, IHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            LoggingSetup.ConfigureLogging();
+            // Configure logging
+            loggerFactory.AddConsole();
+            if (env.IsDevelopment())
+            {
+                loggerFactory.AddDebug();
+            }
 
-            ConfigurationSetup.ConfigureConfiguration();
+            // Configure application
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
 
-            // Update these methods to work with ASP.NET Core
-            DependencyInjectionSetup.ConfigureDependencyInjection(app);
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseRouting();
 
-            AuthenticationConfig.ConfigureAuthentication(app);
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            // TODO: Update or remove these method calls as needed
+            // ConfigurationSetup.ConfigureConfiguration();
+            // DependencyInjectionSetup.ConfigureDependencyInjection(app);
+            // AuthenticationConfig.ConfigureAuthentication(app);
         }
     }
 }
