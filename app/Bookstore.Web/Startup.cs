@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Bookstore.Common; // Assuming ConfigurationSetup is in this namespace
 
 namespace Bookstore.Web
 {
