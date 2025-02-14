@@ -18,6 +18,10 @@ namespace Bookstore.Web
         {
             // Configure services here
             services.AddControllersWithViews();
+
+            // Add any additional service configuration here
+            // For example:
+            // services.AddScoped<IMyService, MyService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostEnvironment env)
@@ -38,9 +42,6 @@ namespace Bookstore.Web
 
             // Use the _configuration object instead of ConfigurationSetup
             // ConfigurationSetup.ConfigureConfiguration();
-
-            // Update these methods to work with ASP.NET Core
-            DependencyInjectionSetup.ConfigureDependencyInjection(app);
 
             AuthenticationConfig.ConfigureAuthentication(app);
 
