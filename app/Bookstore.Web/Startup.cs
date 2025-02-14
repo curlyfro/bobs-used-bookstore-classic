@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Bookstore.Web
 {
@@ -18,6 +19,14 @@ namespace Bookstore.Web
         {
             // Configure services here
             services.AddControllersWithViews();
+
+            // Add authentication
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/Login";
+                    options.LogoutPath = "/Account/Logout";
+                });
 
             // Add any additional service configuration here
             // For example:
@@ -43,7 +52,8 @@ namespace Bookstore.Web
             // Use the _configuration object instead of ConfigurationSetup
             // ConfigurationSetup.ConfigureConfiguration();
 
-            AuthenticationConfig.ConfigureAuthentication(app);
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
