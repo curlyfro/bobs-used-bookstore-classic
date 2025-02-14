@@ -1,26 +1,59 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Bookstore.Web
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             // Configure services here
+            services.AddControllersWithViews();
         }
 
-        public void Configure(IApplicationBuilder app, IHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            LoggingSetup.ConfigureLogging();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
 
-            ConfigurationSetup.ConfigureConfiguration();
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseRouting();
 
-            // Update these methods to work with ASP.NET Core
-            DependencyInjectionSetup.ConfigureDependencyInjection(app);
+            // Configure logging
+            loggerFactory.AddConfiguration(Configuration.GetSection("Logging"));
 
-            AuthenticationConfig.ConfigureAuthentication(app);
+            // Authentication and Authorization
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            // If you still need custom setup methods, ensure they are updated for ASP.NET Core:
+            // DependencyInjectionSetup.ConfigureDependencyInjection(app);
+            // AuthenticationConfig.ConfigureAuthentication(app);
         }
     }
 }
