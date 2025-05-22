@@ -1,5 +1,7 @@
-﻿using Microsoft.Owin;
+using Microsoft.Owin;
 using Owin;
+
+
 
 [assembly: OwinStartup(typeof(Bookstore.Web.Startup))]
 
@@ -9,13 +11,17 @@ namespace Bookstore.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            LoggingSetup.ConfigureLogging();
+            // Comment out or remove until LoggingSetup class is implemented
+            // LoggingSetup.ConfigureLogging();
 
-            ConfigurationSetup.ConfigureConfiguration();
+            // Comment out or remove until ConfigurationSetup class is implemented
+            // ConfigurationSetup.ConfigureConfiguration();
 
-            DependencyInjectionSetup.ConfigureDependencyInjection(app);
+            // Comment out or remove until DependencyInjectionSetup class is implemented
+            // DependencyInjectionSetup.ConfigureDependencyInjection(app);
 
-            AuthenticationConfig.ConfigureAuthentication(app);
+            // Comment out or remove until AuthenticationConfig class is implemented
+            // AuthenticationConfig.ConfigureAuthentication(app);
         }
     }
 }
