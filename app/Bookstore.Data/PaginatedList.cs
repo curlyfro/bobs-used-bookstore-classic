@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using Bookstore.Domain;
 
-namespace Bookstore.Domain
+namespace Bookstore.Data
 {
     public class PaginatedList<T> : List<T>, IPaginatedList<T> where T : Entity
     {

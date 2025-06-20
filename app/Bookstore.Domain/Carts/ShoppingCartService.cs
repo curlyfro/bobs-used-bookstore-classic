@@ -8,12 +8,6 @@ namespace Bookstore.Domain.Carts
 
         Task AddToShoppingCartAsync(AddToShoppingCartDto addToShoppingCartDto);
 
-        Task AddToWishlistAsync(AddToWishlistDto addToWishlistDto);
-
-        Task MoveWishlistItemToShoppingCartAsync(MoveWishlistItemToShoppingCartDto moveWishlistItemToShoppingCartDto);
-
-        Task MoveAllWishlistItemsToShoppingCartAsync(MoveAllWishlistItemsToShoppingCartDto moveAllWishlistItemsToShoppingCartDto);
-
         Task DeleteShoppingCartItemAsync(DeleteShoppingCartItemDto deleteShoppingCartItemDto);
     }
 
@@ -36,11 +30,6 @@ namespace Bookstore.Domain.Carts
             await AddToShoppingCartAsync(dto.CorrelationId, dto.BookId, dto.Quantity, true);
         }
 
-        public async Task AddToWishlistAsync(AddToWishlistDto dto)
-        {
-            await AddToShoppingCartAsync(dto.CorrelationId, dto.BookId, 1, false);
-        }
-
         private async Task AddToShoppingCartAsync(string correlationId, int bookId, int quantity, bool wantToBuy)
         {
             var shoppingCart = await shoppingCartRepository.GetAsync(correlationId);
@@ -59,29 +48,6 @@ namespace Bookstore.Domain.Carts
             else
             {
                 shoppingCart.AddItemToWishlist(bookId);
-            }
-
-            await shoppingCartRepository.SaveChangesAsync();
-        }
-
-        public async Task MoveWishlistItemToShoppingCartAsync(MoveWishlistItemToShoppingCartDto dto)
-        {
-            var shoppingCart = await shoppingCartRepository.GetAsync(dto.CorrelationId);
-
-            shoppingCart.MoveWishListItemToShoppingCart(dto.ShoppingCartItemId);
-
-            await shoppingCartRepository.SaveChangesAsync();
-        }
-
-        public async Task MoveAllWishlistItemsToShoppingCartAsync(MoveAllWishlistItemsToShoppingCartDto dto)
-        {
-            var shoppingCart = await shoppingCartRepository.GetAsync(dto.CorrelationId);
-
-                if (shoppingCart == null) return;
-
-            foreach (var wishListItem in shoppingCart.GetWishListItems())
-            {
-                shoppingCart.MoveWishListItemToShoppingCart(wishListItem.Id);
             }
 
             await shoppingCartRepository.SaveChangesAsync();

@@ -4,7 +4,6 @@ namespace Bookstore.Domain.Carts
 {
     public class ShoppingCartItem : Entity
     {
-        // An empty constructor is required by EF Core
         private ShoppingCartItem() { }
 
         public ShoppingCartItem(ShoppingCart shoppingCart, int bookId, int quantity, bool wantToBuy)

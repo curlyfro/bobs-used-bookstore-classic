@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 
-namespace BobsBookstoreClassic.Data
+namespace Bookstore.Data
 {
     public sealed class BookstoreConfiguration
     {

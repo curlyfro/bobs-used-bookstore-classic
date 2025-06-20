@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
-using Bookstore.Web.ViewModel;
 using Bookstore.Domain.Books;
 using System.Threading.Tasks;
-using Bookstore.Web.ViewModel.Home;
 using System.Web.Mvc;
+using Bookstore.Web.Models;
+using Bookstore.Web.Models.Home;
 
 namespace Bookstore.Web.Controllers
 {

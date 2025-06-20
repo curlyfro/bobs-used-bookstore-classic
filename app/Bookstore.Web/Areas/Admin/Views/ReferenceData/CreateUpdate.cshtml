@@ -1,7 +1,4 @@
-﻿@using Bookstore.Domain.ReferenceData
-@using Bookstore.Web.Helpers
-
-@model Bookstore.Web.Areas.Admin.Models.ReferenceData.ReferenceDataItemCreateUpdateViewModel
+﻿@model Bookstore.Web.Areas.Admin.Models.ReferenceData.ReferenceDataItemCreateUpdateViewModel
 
 <div asp-validation-summary="All"></div>
 
@@ -15,11 +12,13 @@
     <div class="col-4">
         <div class="mb-3">
             <label for="referenceDataTypeSelect" class="form-label">Reference data type</label>
-            @Html.DropDownListFor(a => a.SelectedReferenceDataType, Html.GetSelectListForEnum<ReferenceDataType>(), null, new { @class = "form-select" })
+            @Html.DropDownListFor(a => a.SelectedReferenceDataType, Model.DataTypes, null, new { @class = "form-select"
+                        })
         </div>
         <div class="mb-3">
             <label for="referenceDataTextInput" class="form-label">Text</label>
-            @Html.TextBoxFor(a => a.Text, new { type = "text", @class = "form-control", required = "rquired", id = "referenceDataTextInput" })
+            @Html.TextBoxFor(a => a.Text, new { type = "text", @class = "form-control", required = "rquired", id =
+                        "referenceDataTextInput" })
         </div>
 
         <button class="btn btn-primary" type="submit">Save</button>

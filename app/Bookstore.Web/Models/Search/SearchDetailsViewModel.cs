@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using Bookstore.Domain.Books;
 
-namespace Bookstore.Web.ViewModel.Search
+namespace Bookstore.Web.Models.Search
 {
     public class SearchDetailsViewModel
     {

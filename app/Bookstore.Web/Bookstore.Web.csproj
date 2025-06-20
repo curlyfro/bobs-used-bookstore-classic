@@ -277,7 +277,6 @@
     <Compile Include="Controllers\ResaleController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
-    <Compile Include="Controllers\WishlistController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -289,7 +288,6 @@
     <Compile Include="Helpers\IOwinRequestExtensions.cs" />
     <Compile Include="Helpers\LocalAuthenticationMiddleware.cs" />
     <Compile Include="Helpers\MaxFileSizeAttribute.cs" />
-    <Compile Include="Helpers\MvcHelpers.cs" />
     <Compile Include="Models\Address\AddressCreateUpdateViewModel.cs" />
     <Compile Include="Models\Address\AddressIndexViewModel.cs" />
     <Compile Include="Models\Checkout\CheckoutFinishedViewModel.cs" />
@@ -304,7 +302,6 @@
     <Compile Include="Models\Search\SearchDetailsViewModel.cs" />
     <Compile Include="Models\Search\SearchIndexViewModel.cs" />
     <Compile Include="Models\ShoppingCart\ShoppingCartIndexViewModel.cs" />
-    <Compile Include="Models\Wishlist\WishlistIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -667,7 +664,6 @@
     <Content Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
     <Content Include="Views\ShoppingCart\Error.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
-    <Content Include="Views\Wishlist\Index.cshtml" />
     <Content Include="Views\_ViewImports.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>

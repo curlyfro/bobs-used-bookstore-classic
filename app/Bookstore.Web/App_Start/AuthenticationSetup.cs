@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Integration.Owin;
-using BobsBookstoreClassic.Data;
+using Bookstore.Data;
 using Bookstore.Domain.Customers;
 using Bookstore.Web.Helpers;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;

@@ -1,9 +1,9 @@
-﻿using Bookstore.Domain.ReferenceData;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Bookstore.Domain.ReferenceData;
 
-namespace Bookstore.Web.ViewModel.Resale
+namespace Bookstore.Web.Models.Resale
 {
     public class ResaleCreateViewModel
     {

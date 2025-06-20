@@ -1,8 +1,8 @@
-﻿using Bookstore.Domain;
+﻿using System.Collections.Generic;
+using Bookstore.Domain;
 using Bookstore.Domain.Offers;
-using System.Collections.Generic;
 
-namespace Bookstore.Web.ViewModel.Resale
+namespace Bookstore.Web.Models.Resale
 {
     public class ResaleIndexViewModel
     {

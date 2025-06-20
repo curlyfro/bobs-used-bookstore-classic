@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using Bookstore.Domain.Books;
-using Bookstore.Domain;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using Bookstore.Domain;
+using Bookstore.Domain.Books;
 
-namespace Bookstore.Web.ViewModel.Search
+namespace Bookstore.Web.Models.Search
 {
     public class SearchIndexViewModel : PaginatedViewModel
     {

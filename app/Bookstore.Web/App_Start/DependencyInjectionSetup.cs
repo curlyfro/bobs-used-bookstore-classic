@@ -6,7 +6,6 @@ using Amazon.Rekognition;
 using Amazon.S3;
 using Autofac;
 using Autofac.Integration.Mvc;
-using BobsBookstoreClassic.Data;
 using Bookstore.Data;
 using Bookstore.Data.FileServices;
 using Bookstore.Data.ImageResizeService;

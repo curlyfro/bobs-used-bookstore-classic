@@ -39,7 +39,7 @@ namespace Bookstore.Data.ImageValidationServices
 
             var memoryStream = new MemoryStream();
 
-            image.CopyTo(memoryStream);
+            await image.CopyToAsync(memoryStream);
 
             var result = await rekognitionClient.DetectModerationLabelsAsync(new DetectModerationLabelsRequest()
             {

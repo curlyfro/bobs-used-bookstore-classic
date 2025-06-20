@@ -1,5 +1,5 @@
-﻿using BobsBookstoreClassic.Data;
-using Bookstore.Common;
+﻿using Bookstore.Common;
+using Bookstore.Data;
 using NLog;
 using NLog.AWS.Logger;
 using NLog.Config;

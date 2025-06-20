@@ -4,7 +4,6 @@ namespace Bookstore.Domain.Orders
 {
     public class OrderItem : Entity
     {
-        // This private constructor is required by EF Core
         private OrderItem() { }
 
         public OrderItem(Order order, Book book, int quantity)

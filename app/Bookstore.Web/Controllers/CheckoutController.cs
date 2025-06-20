@@ -2,9 +2,9 @@
 using Bookstore.Domain.Carts;
 using Bookstore.Domain.Orders;
 using Bookstore.Web.Helpers;
-using Bookstore.Web.ViewModel.Checkout;
 using System.Web.Mvc;
 using System.Threading.Tasks;
+using Bookstore.Web.Models.Checkout;
 
 namespace Bookstore.Web.Controllers
 {

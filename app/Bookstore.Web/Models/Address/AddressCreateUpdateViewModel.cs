@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace Bookstore.Web.ViewModel.Address
+namespace Bookstore.Web.Models.Address
 {
     public class AddressCreateUpdateViewModel
     {

@@ -1,8 +1,8 @@
-﻿using Bookstore.Domain.Carts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Bookstore.Domain.Carts;
 
-namespace Bookstore.Web.ViewModel.ShoppingCart
+namespace Bookstore.Web.Models.ShoppingCart
 {
     public class ShoppingCartIndexViewModel
     {

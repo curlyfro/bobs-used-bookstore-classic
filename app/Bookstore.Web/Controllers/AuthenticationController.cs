@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.Mvc;
-using BobsBookstoreClassic.Data;
+using Bookstore.Data;
 
 namespace Bookstore.Web.Controllers
 {

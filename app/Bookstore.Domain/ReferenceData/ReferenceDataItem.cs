@@ -2,7 +2,6 @@
 {
     public class ReferenceDataItem : Entity
     {
-        // An empty constructor is required by EF Core
         private ReferenceDataItem() { }
 
         public ReferenceDataItem(ReferenceDataType referenceDataType, string text)

@@ -2,8 +2,8 @@
 using Bookstore.Web.Helpers;
 using Bookstore.Domain.Books;
 using Bookstore.Domain.Carts;
-using Bookstore.Web.ViewModel.Search;
 using System.Web.Mvc;
+using Bookstore.Web.Models.Search;
 
 namespace Bookstore.Web.Controllers
 {
@@ -40,17 +40,6 @@ namespace Bookstore.Web.Controllers
             await shoppingCartService.AddToShoppingCartAsync(dto);
 
             this.SetNotification("Item added to shopping cart");
-
-            return RedirectToAction("Index", "Search");
-        }
-
-        public async Task<ActionResult> AddItemToWishlist(int bookId)
-        {
-            var dto = new AddToWishlistDto(HttpContext.GetShoppingCartCorrelationId(), bookId);
-
-            await shoppingCartService.AddToWishlistAsync(dto);
-
-            this.SetNotification("Item added to wishlist");
 
             return RedirectToAction("Index", "Search");
         }

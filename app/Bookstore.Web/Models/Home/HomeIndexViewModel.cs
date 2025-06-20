@@ -1,8 +1,8 @@
-﻿using Bookstore.Domain.Books;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Bookstore.Domain.Books;
 
-namespace Bookstore.Web.ViewModel.Home
+namespace Bookstore.Web.Models.Home
 {
     public class HomeIndexViewModel
     {

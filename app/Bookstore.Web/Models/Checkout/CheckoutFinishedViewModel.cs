@@ -1,12 +1,12 @@
-﻿using Bookstore.Domain.Orders;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Bookstore.Domain.Orders;
 
-namespace Bookstore.Web.ViewModel.Checkout
+namespace Bookstore.Web.Models.Checkout
 {
     public class CheckoutFinishedViewModel
     {
-        public IEnumerable<CheckoutFinishedItemViewModel> Items { get; set; } = new List<CheckoutFinishedItemViewModel>();
+        public IEnumerable<CheckoutFinishedItemViewModel> Items { get; set; }
 
         public CheckoutFinishedViewModel(Order order)
         {

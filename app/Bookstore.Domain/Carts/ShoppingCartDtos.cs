@@ -2,11 +2,11 @@
 {
     public class AddToShoppingCartDto
     {
-        public AddToShoppingCartDto(string CorrelationId, int BookId, int Quantity)
+        public AddToShoppingCartDto(string correlationId, int bookId, int quantity)
         {
-            this.CorrelationId = CorrelationId;
-            this.BookId = BookId;
-            this.Quantity = Quantity;
+            this.CorrelationId = correlationId;
+            this.BookId = bookId;
+            this.Quantity = quantity;
         }
 
         public string CorrelationId { get; }
@@ -14,46 +14,12 @@
         public int Quantity { get; }
     }
 
-    public class AddToWishlistDto
-    {
-        public AddToWishlistDto(string CorrelationId, int BookId)
-        {
-            this.CorrelationId = CorrelationId;
-            this.BookId = BookId;
-        }
-
-        public string CorrelationId { get; }
-        public int BookId { get; }
-    }
-
-    public class MoveWishlistItemToShoppingCartDto
-    {
-        public MoveWishlistItemToShoppingCartDto(string CorrelationId, int ShoppingCartItemId)
-        {
-            this.CorrelationId = CorrelationId;
-            this.ShoppingCartItemId = ShoppingCartItemId;
-        }
-
-        public string CorrelationId { get; }
-        public int ShoppingCartItemId { get; }
-    }
-
-    public class MoveAllWishlistItemsToShoppingCartDto
-    {
-        public MoveAllWishlistItemsToShoppingCartDto(string CorrelationId)
-        {
-            this.CorrelationId = CorrelationId;
-        }
-
-        public string CorrelationId { get; }
-    }
-
     public class DeleteShoppingCartItemDto
     {
-        public DeleteShoppingCartItemDto(string CorrelationId, int ShoppingCartItemId)
+        public DeleteShoppingCartItemDto(string correlationId, int shoppingCartItemId)
         {
-            this.CorrelationId = CorrelationId;
-            this.ShoppingCartItemId = ShoppingCartItemId;
+            this.CorrelationId = correlationId;
+            this.ShoppingCartItemId = shoppingCartItemId;
         }
 
         public string CorrelationId { get; }

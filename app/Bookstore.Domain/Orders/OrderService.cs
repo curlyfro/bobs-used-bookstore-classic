@@ -79,8 +79,6 @@ namespace Bookstore.Domain.Orders
                 shoppingCart.RemoveShoppingCartItemById(x.Id);
             });
 
-            // Because each repository implements a unit of work, changes to the shopping cart and to stock levels 
-            // are captured by the unit of work and can be persisted by called SaveChangesAsync on _any_ repository.
             await orderRepository.SaveChangesAsync();
 
             return order.Id;

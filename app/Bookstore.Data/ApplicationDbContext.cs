@@ -52,7 +52,7 @@ namespace Bookstore.Data
 
             modelBuilder.Entity<Order>().HasRequired(x => x.Customer).WithMany().WillCascadeOnDelete(false);
 
-            // Update the Refernce Data Table to Match the modern version
+            // Update the Reference Data Table to Match the modern version
             modelBuilder.Entity<ReferenceDataItem>().ToTable("ReferenceData");
 
             modelBuilder.Entity<ShoppingCartItem>().HasKey(x => new { x.Id, x.ShoppingCartId });

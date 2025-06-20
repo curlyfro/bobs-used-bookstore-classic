@@ -1,14 +1,14 @@
-﻿using Bookstore.Domain;
-using Bookstore.Domain.Orders;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Bookstore.Domain;
+using Bookstore.Domain.Orders;
 
-namespace Bookstore.Web.ViewModel.Orders
+namespace Bookstore.Web.Models.Orders
 {
     public class OrderIndexViewModel
     {
-        public List<OrderIndexItemViewModel> OrderItems { get; set; } = new List<OrderIndexItemViewModel>();
+        public List<OrderIndexItemViewModel> OrderItems { get; set; }
 
         public OrderIndexViewModel(IEnumerable<Order> orders)
         {

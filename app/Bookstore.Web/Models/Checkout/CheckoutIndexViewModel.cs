@@ -1,9 +1,9 @@
-﻿using Bookstore.Domain.Carts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using Bookstore.Domain.Carts;
 
-namespace Bookstore.Web.ViewModel.Checkout
+namespace Bookstore.Web.Models.Checkout
 {
     public class CheckoutIndexViewModel
     {

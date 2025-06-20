@@ -2,20 +2,18 @@
 using Bookstore.Web.Helpers;
 using Bookstore.Domain.Customers;
 using Bookstore.Domain.Carts;
-using Bookstore.Web.ViewModel.ShoppingCart;
 using System.Web.Mvc;
+using Bookstore.Web.Models.ShoppingCart;
 
 namespace Bookstore.Web.Controllers
 {
     [AllowAnonymous]
     public class ShoppingCartController : Controller
     {
-        private readonly ICustomerService customerService;
         private readonly IShoppingCartService shoppingCartService;
 
-        public ShoppingCartController(ICustomerService customerService, IShoppingCartService shoppingCartService)
+        public ShoppingCartController(IShoppingCartService shoppingCartService)
         {
-            this.customerService = customerService;
             this.shoppingCartService = shoppingCartService;
         }
 

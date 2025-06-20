@@ -1,10 +1,10 @@
-﻿using Bookstore.Domain;
-using Bookstore.Domain.Orders;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Bookstore.Domain;
+using Bookstore.Domain.Orders;
 
-namespace Bookstore.Web.ViewModel.Orders
+namespace Bookstore.Web.Models.Orders
 {
     public class OrderDetailsViewModel
     {
@@ -16,7 +16,7 @@ namespace Bookstore.Web.ViewModel.Orders
 
         public decimal Total { get; set; }
 
-        public List<OrderDetailsItemViewModel> OrderItems { get; set; } = new List<OrderDetailsItemViewModel>();
+        public List<OrderDetailsItemViewModel> OrderItems { get; set; }
 
         public OrderDetailsViewModel(Order order)
         {

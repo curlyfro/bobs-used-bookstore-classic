@@ -1,5 +1,7 @@
 ﻿using Bookstore.Domain.ReferenceData;
 using Bookstore.Web.Areas.Admin.Models.ReferenceData;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -27,6 +29,9 @@ namespace Bookstore.Web.Areas.Admin.Controllers
 
             if (selectedReferenceDataType.HasValue) model.SelectedReferenceDataType = selectedReferenceDataType.Value;
 
+            model.DataTypes = Enum.GetValues(typeof(ReferenceDataType)).Cast<ReferenceDataType>()
+                .Select(x => new SelectListItem { Text = x.ToString(), Value = x.ToString() });
+
             return View("CreateUpdate", model);
         }
 
@@ -44,7 +49,12 @@ namespace Bookstore.Web.Areas.Admin.Controllers
         {
             var referenceDataItem = await referenceDataService.GetReferenceDataItemAsync(id);
 
-            return View("CreateUpdate", new ReferenceDataItemCreateUpdateViewModel(referenceDataItem));
+            var model = new ReferenceDataItemCreateUpdateViewModel(referenceDataItem);
+
+            model.DataTypes = Enum.GetValues(typeof(ReferenceDataType)).Cast<ReferenceDataType>()
+                .Select(x => new SelectListItem { Text = x.ToString(), Value = x.ToString() });
+
+            return View("CreateUpdate", model);
         }
 
         [HttpPost]
