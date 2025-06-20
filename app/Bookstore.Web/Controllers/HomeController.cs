@@ -1,9 +1,12 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using Bookstore.Domain.Books;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 using Bookstore.Web.Models;
 using Bookstore.Web.Models.Home;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+
 
 namespace Bookstore.Web.Controllers
 {
