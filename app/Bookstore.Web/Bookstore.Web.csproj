@@ -255,7 +255,6 @@
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Admin\Controllers\InventoryController.cs" />
-    <Compile Include="Areas\Admin\Controllers\OffersController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReferenceDataController.cs" />
     <Compile Include="Areas\Admin\Models\Dashboard\DashboardIndexViewModel.cs" />
@@ -263,7 +262,6 @@
     <Compile Include="Areas\Admin\Models\Inventory\InventoryCreateUpdateViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Inventory\InventoryDetailsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Inventory\InventoryIndexViewModel.cs" />
-    <Compile Include="Areas\Admin\Models\Offers\OfferIndexViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Orders\OrderDetailsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Orders\OrderIndexViewModel.cs" />
     <Compile Include="Areas\Admin\Models\PaginatedViewModel.cs" />
@@ -274,7 +272,6 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\ResaleController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
@@ -297,8 +294,6 @@
     <Compile Include="Models\Orders\OrderDetailsViewModel.cs" />
     <Compile Include="Models\Orders\OrderIndexViewModel.cs" />
     <Compile Include="Models\PaginatedViewModel.cs" />
-    <Compile Include="Models\Resale\ResaleCreateViewModel.cs" />
-    <Compile Include="Models\Resale\ResaleIndexViewModel.cs" />
     <Compile Include="Models\Search\SearchDetailsViewModel.cs" />
     <Compile Include="Models\Search\SearchIndexViewModel.cs" />
     <Compile Include="Models\ShoppingCart\ShoppingCartIndexViewModel.cs" />
@@ -478,7 +473,6 @@
     <Content Include="Areas\Admin\Views\Inventory\CreateUpdate.cshtml" />
     <Content Include="Areas\Admin\Views\Inventory\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Inventory\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Offers\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ReferenceData\CreateUpdate.cshtml" />
@@ -651,8 +645,6 @@
     <Content Include="Views\Home\Privacy.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
-    <Content Include="Views\Resale\Create.cshtml" />
-    <Content Include="Views\Resale\Index.cshtml" />
     <Content Include="Views\Search\Details.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />

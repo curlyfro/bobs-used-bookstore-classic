@@ -16,7 +16,6 @@ using Bookstore.Domain.Addresses;
 using Bookstore.Domain.Books;
 using Bookstore.Domain.Carts;
 using Bookstore.Domain.Customers;
-using Bookstore.Domain.Offers;
 using Bookstore.Domain.Orders;
 using Bookstore.Domain.ReferenceData;
 using Bookstore.Web.Helpers;
@@ -35,7 +34,6 @@ namespace Bookstore.Web
             builder.RegisterType<BookService>().As<IBookService>();
             builder.RegisterType<OrderService>().As<IOrderService>();
             builder.RegisterType<ReferenceDataService>().As<IReferenceDataService>();
-            builder.RegisterType<OfferService>().As<IOfferService>();
             builder.RegisterType<CustomerService>().As<ICustomerService>();
             builder.RegisterType<AddressService>().As<IAddressService>();
             builder.RegisterType<ShoppingCartService>().As<IShoppingCartService>();
@@ -47,7 +45,6 @@ namespace Bookstore.Web
             builder.RegisterType<CustomerRepository>().As<ICustomerRepository>();
             builder.RegisterType<AddressRepository>().As<IAddressRepository>();
             builder.RegisterType<BookRepository>().As<IBookRepository>();
-            builder.RegisterType<OfferRepository>().As<IOfferRepository>();
             builder.RegisterType<ShoppingCartRepository>().As<IShoppingCartRepository>();
             builder.RegisterType<OrderRepository>().As<IOrderRepository>();
             builder.RegisterType<ReferenceDataRepository>().As<IReferenceDataRepository>();

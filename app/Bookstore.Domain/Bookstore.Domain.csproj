@@ -70,13 +70,6 @@
     <Compile Include="IImageResizeService.cs" />
     <Compile Include="IImageValidationService.cs" />
     <Compile Include="IPaginatedList.cs" />
-    <Compile Include="Offers\IOfferRepository.cs" />
-    <Compile Include="Offers\Offer.cs" />
-    <Compile Include="Offers\OfferDtos.cs" />
-    <Compile Include="Offers\OfferFilters.cs" />
-    <Compile Include="Offers\OfferService.cs" />
-    <Compile Include="Offers\OfferStatistics.cs" />
-    <Compile Include="Offers\OfferStatus.cs" />
     <Compile Include="Orders\IOrderRepository.cs" />
     <Compile Include="Orders\Order.cs" />
     <Compile Include="Orders\OrderDtos.cs" />
